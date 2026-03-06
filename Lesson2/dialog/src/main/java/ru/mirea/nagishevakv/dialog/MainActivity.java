@@ -1,7 +1,12 @@
 package ru.mirea.nagishevakv.dialog;
 
+import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -27,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickShowDialog (View view) {
-        AlertDialogFrament dialogFragment = new AlertDialogFrament();
+        AlertDialogFragment dialogFragment = new AlertDialogFragment();
         dialogFragment.show(getSupportFragmentManager(), "meow");
     }
 
@@ -56,4 +61,52 @@ public class MainActivity extends AppCompatActivity {
         });
         snackbar.show();
     }
+
+    TimePickerDialog.OnTimeSetListener t=new TimePickerDialog.OnTimeSetListener() {
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+        }
+    };
+
+    public void onClickShowTimeDialog (View view) {
+        // TimeDialogFragment dialogFragment = new TimeDialogFragment();
+        // dialogFragment.show(getSupportFragmentManager(), "time");
+
+        new TimePickerDialog(MainActivity.this, t,
+                0,
+                0, true)
+                .show();
+    }
+
+    DatePickerDialog.OnDateSetListener d=new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+        }
+    };
+
+    public void onClickShowDateDialog (View view) {
+        // AlertDialogFragment dialogFragment = new AlertDialogFragment();
+        // dialogFragment.show(getSupportFragmentManager(), "date");
+
+        new DatePickerDialog(MainActivity.this, d,
+                2026,
+                3,
+                6)
+                .show();
+    }
+
+
+    public void onClickShowProgressDialog (View view) {
+        // ProgressDialogFragment dialogFragment = new ProgressDialogFragment();
+        // dialogFragment.show(getSupportFragmentManager(), "progress");
+
+        ProgressDialog progress = new ProgressDialog(MainActivity.this);
+        progress.setTitle("Загрузка");
+        progress.setMessage("Качаем вирусы");
+        progress.show();
+
+    }
+
+
+
 }
