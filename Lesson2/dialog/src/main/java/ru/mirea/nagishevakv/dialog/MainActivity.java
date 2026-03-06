@@ -10,6 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btnForSnack), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -40,5 +42,18 @@ public class MainActivity extends AppCompatActivity {
     public void onNeutralClicked(String variantText) {
         Toast.makeText(getApplicationContext(), String.format("Вы выбрали кнопку \"%s\"!", variantText),
                 Toast.LENGTH_LONG).show();
+    }
+
+    public  void makeSnackbar(View view){
+        Snackbar snackbar = Snackbar.make(view, "Это снэкбар", Snackbar.LENGTH_LONG);
+
+        snackbar.setAction("Жмяк", new View.OnClickListener (){
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(), "Кнопка снэкбара жмякнута",Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
+        snackbar.show();
     }
 }
