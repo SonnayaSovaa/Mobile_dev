@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onClickCall(View view) {
         Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:89811112233"));
+        intent.setData(Uri.parse("tel:88005553535"));
         startActivity(intent);
     }
     public void onClickOpenBrowser(View view) {
