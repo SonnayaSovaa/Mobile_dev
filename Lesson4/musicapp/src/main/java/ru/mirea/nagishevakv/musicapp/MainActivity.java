@@ -1,4 +1,4 @@
-package ru.mirea.nagishevakv.lesson4;
+package ru.mirea.nagishevakv.musicapp;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import ru.mirea.nagishevakv.lesson4.databinding.ActivityMainBinding;
+import ru.mirea.nagishevakv.musicapp.databinding.ActivityMainBinding;
 
 public	class	MainActivity extends AppCompatActivity	{
     private ActivityMainBinding binding;
@@ -19,11 +19,12 @@ public	class	MainActivity extends AppCompatActivity	{
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.editTextMirea.setText("Мой	номер	по	списку	№16");
-        binding.buttonMirea.setOnClickListener(new View.OnClickListener() {
+
+        binding.pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(MainActivity.class.getSimpleName(), "onClickListener");
+                binding.artistName.setText("Король И Шут");
+                binding.trackName.setText("Лесник");
             }
         });
     }
