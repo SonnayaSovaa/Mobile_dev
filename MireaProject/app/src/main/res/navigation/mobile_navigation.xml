@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mobile_navigation"
+        app:startDestination="@+id/nav_home">
+
+    <fragment
+            android:id="@+id/nav_home"
+            android:name="ru.mirea.shutovks.mireaproject.ui.home.HomeFragment"
+            android:label="@string/menu_home"
+            tools:layout="@layout/fragment_home" />
+
+    <fragment
+            android:id="@+id/nav_gallery"
+            android:name="ru.mirea.shutovks.mireaproject.ui.gallery.GalleryFragment"
+            android:label="@string/menu_gallery"
+            tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+            android:id="@+id/nav_slideshow"
+            android:name="ru.mirea.shutovks.mireaproject.ui.slideshow.SlideshowFragment"
+            android:label="@string/menu_slideshow"
+            tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+            android:id="@+id/nav_data"
+            android:name="ru.mirea.shutovks.mireaproject.ui.data.DataFragment"
+            android:label="Информация"
+            tools:layout="@layout/fragment_data" />
+
+    <fragment
+            android:id="@+id/nav_webview"
+            android:name="ru.mirea.shutovks.mireaproject.ui.browser.WebViewFragment"
+            android:label="Веб-браузер"
+            tools:layout="@layout/fragment_web_view" />
+
+    <fragment
+            android:id="@+id/nav_background"
+            android:name="ru.mirea.shutovks.mireaproject.ui.background.BackgroundFragment"
+            android:label="Background Task"
+            tools:layout="@layout/fragment_backgroun" />
+
+    <fragment
+            android:id="@+id/nav_camera"
+            android:name="ru.mirea.shutovks.mireaproject.ui.camera.CameraFragment"
+            android:label="Camera"
+            tools:layout="@layout/fragment_camera" />
+
+    <fragment
+            android:id="@+id/nav_compass"
+            android:name="ru.mirea.shutovks.mireaproject.ui.compass.CompassFragment"
+            android:label="Compass"
+            tools:layout="@layout/fragment_compass" />
+
+    <fragment
+            android:id="@+id/nav_microphone"
+            android:name="ru.mirea.shutovks.mireaproject.ui.microphone.MicrophoneFragment"
+            android:label="Microphone"
+            tools:layout="@layout/fragment_microphone" />
+
+    <fragment
+            android:id="@+id/nav_profile"
+            android:name="ru.mirea.shutovks.mireaproject.ui.profile.ProfileFragment"
+            android:label="Профиль"
+            tools:layout="@layout/fragment_profile" />
+
+    <fragment
+            android:id="@+id/nav_file_work"
+            android:name="ru.mirea.shutovks.mireaproject.ui.filework.FileWorkFragment"
+            android:label="Работа с файлами"
+            tools:layout="@layout/fragment_file_work" />
+
+</navigation>
