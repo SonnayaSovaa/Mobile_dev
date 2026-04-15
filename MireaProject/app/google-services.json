@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "358484359646",
-    "project_id": "mireaproject-shutovks",
-    "storage_bucket": "mireaproject-shutovks.firebasestorage.app"
+    "project_id": "mireaproject-nagishevakv",
+    "storage_bucket": "mireaproject-nagishevakv.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:358484359646:android:d762c2f5d8cc11d928454f",
         "android_client_info": {
-          "package_name": "ru.mirea.shutovks.mireaproject"
+          "package_name": "ru.mirea.nagishevakv.mireaproject"
         }
       },
       "oauth_client": [],

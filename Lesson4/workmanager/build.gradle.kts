@@ -1,16 +1,19 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
-    namespace = "ru.mirea.nagishevakv.mireaproject"
-    compileSdk = 35
+    namespace = "ru.mirea.nagishevakv.workmanager"
+    compileSdk {
+        version = release(36) {
+            minorApiLevel = 1
+        }
+    }
 
     defaultConfig {
-        applicationId = "ru.mirea.nagishevakv.mireaproject"
+        applicationId = "ru.mirea.nagishevakv.workmanager"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -30,28 +33,15 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
-
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.constraintlayout)
-    implementation(libs.lifecycle.livedata.ktx)
-    implementation(libs.lifecycle.viewmodel.ktx)
-    implementation(libs.navigation.fragment)
-    implementation(libs.navigation.ui)
-    implementation(libs.core)
-    implementation(libs.work.runtime)
-    implementation(libs.firebase.auth)
     implementation(libs.activity)
+    implementation(libs.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation("androidx.work:work-runtime:2.8.1")
 }

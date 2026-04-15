@@ -1,4 +1,4 @@
-package ru.mirea.shutovks.mireaproject.ui.slideshow;
+package ru.mirea.nagishevakv.mireaproject.ui.slideshow;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
