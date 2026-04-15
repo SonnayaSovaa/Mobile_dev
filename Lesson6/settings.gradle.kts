@@ -26,3 +26,4 @@ rootProject.name = "Lesson6"
 include(":app")
 include(":securesharedpreferences")
 include(":internalfilestorage")
+include(":notebook")
