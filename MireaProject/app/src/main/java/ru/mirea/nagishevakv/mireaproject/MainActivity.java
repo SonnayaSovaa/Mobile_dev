@@ -8,6 +8,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -15,6 +16,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+import ru.mirea.nagishevakv.mireaproject.ui.files.FilesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_worker,
                 R.id.nav_recorder,
                 R.id.nav_camera,
-                R.id.nav_sensor
+                R.id.nav_sensor,
+                R.id.nav_files,
+                R.id.nav_profile
         ).setOpenableLayout(drawerLayout).build();
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
@@ -69,19 +74,49 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
 
         FloatingActionButton fabCamera = findViewById(R.id.fab_camera);
+        
         fabCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.nav_camera);
+                int currentId = navController.getCurrentDestination().getId();
+                if (currentId == R.id.nav_files) {
+                    Fragment navHost = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
+                    if (navHost != null) {
+                        Fragment currentFragment = navHost.getChildFragmentManager().getFragments().get(0);
+                        if (currentFragment instanceof FilesFragment) {
+                            ((FilesFragment) currentFragment).showCreateFileDialog();
+                        }
+                    }
+                } else {
+                    navController.navigate(R.id.nav_camera);
+                }
             }
         });
 
-        // Hide FAB when in Camera Fragment (optional but better UX)
+        FloatingActionButton fabProfile = findViewById(R.id.fab_profile);
+        fabProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.nav_profile);
+            }
+        });
+
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             if (destination.getId() == R.id.nav_camera) {
                 fabCamera.setVisibility(View.GONE);
             } else {
                 fabCamera.setVisibility(View.VISIBLE);
+                if (destination.getId() == R.id.nav_files) {
+                    fabCamera.setImageResource(android.R.drawable.ic_input_add);
+                } else {
+                    fabCamera.setImageResource(android.R.drawable.ic_menu_camera);
+                }
+            }
+            
+            if (destination.getId() == R.id.nav_profile) {
+                fabProfile.setVisibility(View.GONE);
+            } else {
+                fabProfile.setVisibility(View.VISIBLE);
             }
         });
     }
