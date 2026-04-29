@@ -28,4 +28,22 @@
         android:name="ru.mirea.nagishevakv.mireaproject.ui.worker.WorkerFragment"
         android:label="Background Task"
         tools:layout="@layout/fragment_worker" />
+
+    <fragment
+        android:id="@+id/nav_recorder"
+        android:name="ru.mirea.nagishevakv.mireaproject.ui.recorder.RecorderFragment"
+        android:label="Recorder"
+        tools:layout="@layout/fragment_recorder" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="ru.mirea.nagishevakv.mireaproject.ui.camera.CameraFragment"
+        android:label="Camera Collage"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/nav_sensor"
+        android:name="ru.mirea.nagishevakv.mireaproject.ui.sensor.SensorFragment"
+        android:label="Pressure Sensor"
+        tools:layout="@layout/fragment_sensor" />
 </navigation>

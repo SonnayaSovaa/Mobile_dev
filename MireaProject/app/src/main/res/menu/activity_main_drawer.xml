@@ -23,5 +23,20 @@
             android:icon="@android:drawable/ic_menu_manage"
             android:title="Фоновая задача" />
 
+        <item
+            android:id="@+id/nav_recorder"
+            android:icon="@android:drawable/ic_btn_speak_now"
+            android:title="Диктофон" />
+
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@android:drawable/ic_menu_camera"
+            android:title="Камера" />
+
+        <item
+            android:id="@+id/nav_sensor"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="Датчик давления" />
+
     </group>
 </menu>
