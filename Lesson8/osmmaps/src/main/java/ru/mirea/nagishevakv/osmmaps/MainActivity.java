@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mapView.getOverlays().add(marker);
         marker.setIcon(ResourcesCompat.getDrawable(getResources(), org.osmdroid.library.
                 R.drawable.osm_ic_follow_me_on, null));
-        marker.setTitle("MIERA");
+        marker.setTitle("11");
     }
 
     @Override

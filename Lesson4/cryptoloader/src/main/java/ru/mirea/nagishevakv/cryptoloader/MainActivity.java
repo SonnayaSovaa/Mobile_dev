@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<String> onCreateLoader(int i, @Nullable Bundle bundle) {
         if (i == LoaderID) {
-            Toast.makeText(this, "onCreateLoader:" + i, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "onCreateLoaderID:" + i, Toast.LENGTH_SHORT).show();
             return new CryptLoader(this, bundle);
         }
         throw new RuntimeException("Invalid loader id");
