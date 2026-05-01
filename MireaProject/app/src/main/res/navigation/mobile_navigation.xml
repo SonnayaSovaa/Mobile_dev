@@ -58,4 +58,10 @@
         android:name="ru.mirea.nagishevakv.mireaproject.ui.profile.ProfileFragment"
         android:label="Профиль"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_institution"
+        android:name="ru.mirea.nagishevakv.mireaproject.ui.institution.InstitutionFragment"
+        android:label="@string/menu_institution"
+        tools:layout="@layout/fragment_institution" />
 </navigation>

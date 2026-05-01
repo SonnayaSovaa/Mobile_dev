@@ -44,6 +44,7 @@ dependencies {
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
     implementation("androidx.work:work-runtime:2.9.1")
+    implementation("androidx.preference:preference:1.2.1")
 
     // Firebase
     implementation(platform(libs.firebase.bom))
@@ -54,7 +55,7 @@ dependencies {
     implementation(libs.googleid)
 
     // OSMDroid
-    implementation("org.osmdroid:osmdroid-android:6.1.18")
+    implementation("org.osmdroid:osmdroid-android:6.1.20")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

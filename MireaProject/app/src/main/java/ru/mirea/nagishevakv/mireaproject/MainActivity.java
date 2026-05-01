@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_camera,
                 R.id.nav_sensor,
                 R.id.nav_files,
-                R.id.nav_profile
+                R.id.nav_profile,
+                R.id.nav_institution
         ).setOpenableLayout(drawerLayout).build();
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
