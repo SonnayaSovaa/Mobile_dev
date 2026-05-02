@@ -53,5 +53,10 @@
             android:icon="@android:drawable/ic_dialog_map"
             android:title="Заведения" />
 
+        <item
+            android:id="@+id/nav_internet_resource"
+            android:icon="@android:drawable/ic_menu_share"
+            android:title="Сетевой ресурс" />
+
     </group>
 </menu>

@@ -115,6 +115,7 @@ public class CameraFragment extends Fragment {
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(imageFileName, ".jpg", storageDir);
+        Log.d("FILEPATH", storageDir.toString());
         currentPhotoPath = image.getAbsolutePath();
         return image;
     }

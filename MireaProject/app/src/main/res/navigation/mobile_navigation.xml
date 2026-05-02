@@ -64,4 +64,10 @@
         android:name="ru.mirea.nagishevakv.mireaproject.ui.institution.InstitutionFragment"
         android:label="@string/menu_institution"
         tools:layout="@layout/fragment_institution" />
+
+    <fragment
+        android:id="@+id/nav_internet_resource"
+        android:name="ru.mirea.nagishevakv.mireaproject.ui.internetresource.InternetResourceFragment"
+        android:label="@string/menu_internet_resource"
+        tools:layout="@layout/fragment_internet_resource" />
 </navigation>
